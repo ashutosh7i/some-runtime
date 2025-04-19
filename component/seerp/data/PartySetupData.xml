@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed-initial">
+    <moqui.security.ArtifactGroup artifactGroupId="SE_ERP_APP" description="SE_ERP App (via root screen)"/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="SE_ERP_APP" artifactName="component://seerp/screen/rootscreen.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
+    <moqui.security.ArtifactAuthz artifactAuthzId="SE_ERP_ALL" userGroupId="ALL_USERS" artifactGroupId="SE_ERP_APP" authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+</entity-facade-xml>

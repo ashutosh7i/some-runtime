@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd">
+    <transition name="createParty">
+        <service-call name="create#seerp.Party"/>
+        <default-response url="."/>
+    </transition>
+    <actions>
+        <entity-find entity-name="seerp.Party" list="partyList">
+            <search-form-inputs/></entity-find>
+    </actions>
+    <widgets>
+
+        <container-dialog id="CreateTutorialDialog" button-text="Create Party">
+            <form-single name="CreateTutorial" transition="createParty">
+                <auto-fields-entity entity-name="seerp.Party" field-type="edit"/>
+                <field name="submitButton"><default-field title="Create"><submit/></default-field></field>
+            </form-single>
+        </container-dialog>
+
+        <form-list name="ListParties" list="partyList" header-dialog="true" skip-form="true">
+            <auto-fields-entity entity-name="seerp.Party" field-type="find-display"/>
+<!--            <field name="description">-->
+<!--                <header-field show-order-by="true"><text-find hide-options="true"/></header-field>-->
+<!--                <default-field><display/></default-field>-->
+<!--            </field>-->
+        </form-list>
+    </widgets>
+</screen>
